@@ -17,9 +17,7 @@ downloads:
 
 
 freshdata:
-	node imf_to_csv.js
-
-all: directories downloads freshdata
+	node imf_to_csv.js 
 
 clean:
 	-rm -rf ./data
@@ -43,6 +41,9 @@ droughtmap:
 	unzip -o ./tmp/cb_2020_us_state_20m.zip -d ./tmp
 
 	# make the state gray-filled map base
+
+
+
 	npx mapshaper -i ./tmp/cb_2020_us_state_20m.shp \
 	-simplify percentage=60% resolution=1000x800 \
 	-style stroke='#a0a0a0' stroke-width=0.5 fill=#E6E6E6 \
